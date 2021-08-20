@@ -84,6 +84,9 @@ function HomePage(props) {
                         <NavLink to={`/products/${productItem._id}`}>
                             View/Edit
                         </NavLink>
+                        <NavLink to={`/product/${productItem._id}`}>
+                            View/Edit
+                        </NavLink>
                     </Col>
 
                 ))}
