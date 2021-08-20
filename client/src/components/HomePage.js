@@ -37,6 +37,18 @@ function HomePage(props) {
         }
 
     }
+
+    async function deleteProduct(id) {
+
+
+        try{
+            console.log(id)
+            await axios.delete(`/api/products/${id}`)
+        } catch (e) {
+        console.log(e.response.data)
+    }
+
+    }
     return (
         <div>
             <Container>
@@ -84,9 +96,7 @@ function HomePage(props) {
                         <NavLink to={`/products/${productItem._id}`}>
                             View/Edit
                         </NavLink>
-                        <NavLink to={`/product/${productItem._id}`}>
-                            View/Edit
-                        </NavLink>
+                        <Button onClick={()=>deleteProduct(productItem._id)} >Delete</Button>
                     </Col>
 
                 ))}
