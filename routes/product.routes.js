@@ -49,6 +49,16 @@ router.delete("/products/:id", async (req,res) => {
     }
 })
 
+//get all products
+router.get("/", async (req,res) => {
+    try{
+        let products = await ProductModel.find()
+
+        res.status(200).json({data: products})
+    } catch (e) {
+        res.status(400).json({"message":"error in getting all data"})
+    }
+})
 
 
 module.exports = router
